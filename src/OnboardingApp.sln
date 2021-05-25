@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{56324EA7-54FF-47C3-9D90-6F5E859E73DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{502C5ED9-DD34-4CCF-81E8-9C5F2B72778E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{F7070522-1BEC-4A9C-BB56-4FAC28857639}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{56324EA7-54FF-47C3-9D90-6F5E859E73DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56324EA7-54FF-47C3-9D90-6F5E859E73DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56324EA7-54FF-47C3-9D90-6F5E859E73DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{502C5ED9-DD34-4CCF-81E8-9C5F2B72778E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{502C5ED9-DD34-4CCF-81E8-9C5F2B72778E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{502C5ED9-DD34-4CCF-81E8-9C5F2B72778E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{502C5ED9-DD34-4CCF-81E8-9C5F2B72778E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7070522-1BEC-4A9C-BB56-4FAC28857639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7070522-1BEC-4A9C-BB56-4FAC28857639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7070522-1BEC-4A9C-BB56-4FAC28857639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7070522-1BEC-4A9C-BB56-4FAC28857639}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
