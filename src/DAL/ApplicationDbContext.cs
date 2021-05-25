@@ -4,11 +4,12 @@ namespace DAL
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<City> Cities { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
+        public DbSet<City> Cities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
