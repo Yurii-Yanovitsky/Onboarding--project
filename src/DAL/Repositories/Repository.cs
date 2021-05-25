@@ -20,6 +20,7 @@ namespace DAL
         public async Task Create(TEntity entity)
         {
             await _dbEntity.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
         }
 
         public async Task Delete(int id)
@@ -28,6 +29,7 @@ namespace DAL
             if (entity != null)
             {
                 _dbEntity.Remove(entity);
+                await _dbContext.SaveChangesAsync();
             }
         }
 
