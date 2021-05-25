@@ -23,6 +23,12 @@ namespace DAL
             await _dbContext.SaveChangesAsync();
         }
 
+        public async Task AddRange(IEnumerable<TEntity> entities)
+        {
+            await _dbEntity.AddRangeAsync(entities);
+            await _dbContext.SaveChangesAsync();
+        }
+
         public async Task Delete(int id)
         {
             var entity = await _dbEntity.FindAsync(id);

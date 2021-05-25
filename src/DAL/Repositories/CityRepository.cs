@@ -14,6 +14,10 @@ namespace DAL
         {
             await Add(city);
         }
+        public async Task AddCities(IEnumerable<City> cities)
+        {
+            await AddRange(cities);
+        }
 
         public async Task DeleteCity(int id)
         {
