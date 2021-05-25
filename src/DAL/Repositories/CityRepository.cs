@@ -10,9 +10,9 @@ namespace DAL
         {
 
         }
-        public async Task CreateCity(City city)
+        public async Task AddCity(City city)
         {
-            await Create(city);
+            await Add(city);
         }
 
         public async Task DeleteCity(int id)

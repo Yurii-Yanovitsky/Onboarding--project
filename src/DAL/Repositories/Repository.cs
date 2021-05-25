@@ -17,7 +17,7 @@ namespace DAL
             _dbEntity = _dbContext.Set<TEntity>();
         }
 
-        public async Task Create(TEntity entity)
+        public async Task Add(TEntity entity)
         {
             await _dbEntity.AddAsync(entity);
             await _dbContext.SaveChangesAsync();

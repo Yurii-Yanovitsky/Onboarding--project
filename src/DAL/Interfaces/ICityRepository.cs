@@ -7,7 +7,7 @@ namespace DAL
     {
         Task<IEnumerable<City>> GetAllCities();
         Task<City> GetCityById(int id);
-        Task CreateCity(City city);
+        Task AddCity(City city);
         Task UpdateCity(City city);
         Task DeleteCity(int id);
     }
