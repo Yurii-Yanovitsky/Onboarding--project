@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210525194243_initial")]
+    [Migration("20210526063628_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,13 +28,14 @@ namespace DAL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("X")
-                        .HasColumnType("int");
+                    b.Property<double>("X")
+                        .HasColumnType("float");
 
-                    b.Property<int>("Y")
-                        .HasColumnType("int");
+                    b.Property<double>("Y")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

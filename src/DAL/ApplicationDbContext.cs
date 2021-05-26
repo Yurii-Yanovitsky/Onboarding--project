@@ -13,7 +13,7 @@ namespace DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<City>().Property(c => c.Id).IsRequired();
+            modelBuilder.Entity<City>().Property(c => c.Name).IsRequired();
         }
     }
 }
