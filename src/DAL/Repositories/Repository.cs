@@ -8,8 +8,8 @@ namespace DAL
         where TEntity : class
         where TContext : DbContext
     {
-        public TContext _dbContext { get; }
-        public DbSet<TEntity> _dbEntity { get; }
+        private readonly TContext _dbContext;
+        private readonly DbSet<TEntity> _dbEntity;
 
         public Repository(TContext dbContext)
         {
