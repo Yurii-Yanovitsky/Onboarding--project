@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BLL.Services.Interfaces;
+using DAL;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,10 +12,12 @@ namespace WebAPI.Controllers
     public class CityController : Controller
     {
         private readonly ICityRepository _repository;
+        private readonly ICityService _cityService;
 
-        public CityController(ICityRepository repository)
+        public CityController(ICityRepository repository, ICityService cityService)
         {
             _repository = repository;
+            _cityService = cityService;
         }
 
         [HttpGet]
@@ -30,9 +33,14 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task Post(City[] cities)
+        public async Task<ActionResult> Post(City[] cities)
         {
-            await _repository.AddCities(cities);
+            if (await _cityService.AddRange(cities))
+            {
+                return Ok();
+            }
+
+            return BadRequest(new { Error = "Coordinates are invalid" });
         }
     }
 }
