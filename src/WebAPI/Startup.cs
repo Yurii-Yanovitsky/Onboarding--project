@@ -1,3 +1,5 @@
+using BLL.Services.Implementations;
+using BLL.Services.Interfaces;
 using DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,6 +24,7 @@ namespace WebAPI
             services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<ICityService, CityService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

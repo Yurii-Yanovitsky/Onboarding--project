@@ -5,8 +5,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\BLL\BLL.csproj" />
 		<ProjectReference Include="..\DAL\DAL.csproj" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4"/>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4" />
 	</ItemGroup>
 
 </Project>
