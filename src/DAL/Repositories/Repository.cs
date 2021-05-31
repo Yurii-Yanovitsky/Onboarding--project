@@ -17,19 +17,19 @@ namespace DAL
             _dbEntity = _dbContext.Set<TEntity>();
         }
 
-        public async Task Add(TEntity entity)
+        public virtual async Task Add(TEntity entity)
         {
             await _dbEntity.AddAsync(entity);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task AddRange(IEnumerable<TEntity> entities)
+        public virtual async Task AddRange(IEnumerable<TEntity> entities)
         {
             await _dbEntity.AddRangeAsync(entities);
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task Delete(int id)
+        public virtual async Task Delete(int id)
         {
             var entity = await _dbEntity.FindAsync(id);
             if (entity != null)
@@ -39,17 +39,17 @@ namespace DAL
             }
         }
 
-        public async Task<IEnumerable<TEntity>> GetAll()
+        public virtual async Task<IEnumerable<TEntity>> GetAll()
         {
             return await _dbEntity.ToListAsync();
         }
 
-        public async Task<TEntity> GetById(int id)
+        public virtual async Task<TEntity> GetById(int id)
         {
             return await _dbEntity.FindAsync(id);
         }
 
-        public async Task Update(TEntity entity)
+        public virtual async Task Update(TEntity entity)
         {
             _dbEntity.Update(entity);
             await _dbContext.SaveChangesAsync();
