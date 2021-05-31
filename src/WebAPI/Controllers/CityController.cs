@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
-    [Route("{controller=City}")]
     [Route("api/[controller]")]
     [ApiController]
     public class CityController : Controller
