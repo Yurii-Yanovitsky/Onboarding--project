@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BLL\BLL.csproj" />
+		<ProjectReference Include="..\DAL\DAL.csproj" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4" />
+	</ItemGroup>
+
+</Project>
