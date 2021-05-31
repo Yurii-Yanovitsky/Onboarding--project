@@ -3,13 +3,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public interface ICityRepository
+    public interface ICityRepository : IRepository<City>
     {
-        Task<IEnumerable<City>> GetAllCities();
-        Task<City> GetCityById(int id);
-        Task AddCity(City city);
-        Task AddCities(IEnumerable<City> cities);
-        Task UpdateCity(City city);
-        Task DeleteCity(int id);
     }
 }

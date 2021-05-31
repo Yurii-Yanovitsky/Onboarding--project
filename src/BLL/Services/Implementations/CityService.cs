@@ -25,7 +25,7 @@ namespace BLL.Services.Implementations
                 return false;
             }
 
-            await _cityRepository.AddCities(cities);
+            await _cityRepository.AddRange(cities);
 
             return true;
         }
@@ -67,7 +67,7 @@ namespace BLL.Services.Implementations
 
         private async Task<bool> CheckCoordUniquenessDb(IEnumerable<City> cities, double delta)
         {
-            var allCities = await _cityRepository.GetAllCities();
+            var allCities = await _cityRepository.GetAll();
 
             if (allCities.Any(a => cities.Any(b => Math.Abs(b.X - a.X) < delta || Math.Abs(b.Y - a.Y) < delta)))
             {

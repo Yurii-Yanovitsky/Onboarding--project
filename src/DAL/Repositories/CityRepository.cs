@@ -10,33 +10,33 @@ namespace DAL
         {
 
         }
-        public async Task AddCity(City city)
+        public override async Task Add(City city)
         {
-            await Add(city);
+            await base.Add(city);
         }
-        public async Task AddCities(IEnumerable<City> cities)
+        public override async Task AddRange(IEnumerable<City> cities)
         {
-            await AddRange(cities);
-        }
-
-        public async Task DeleteCity(int id)
-        {
-            await Delete(id);
+            await base.AddRange(cities);
         }
 
-        public async Task<IEnumerable<City>> GetAllCities()
+        public override async Task Delete(int id)
         {
-            return await GetAll();
+            await base.Delete(id);
         }
 
-        public async Task<City> GetCityById(int id)
+        public override async Task<IEnumerable<City>> GetAll()
         {
-            return await GetById(id);
+            return await base.GetAll();
         }
 
-        public async Task UpdateCity(City city)
+        public override async Task<City> GetById(int id)
         {
-            await Update(city);
+            return await base.GetById(id);
+        }
+
+        public override async Task Update(City city)
+        {
+            await base.Update(city);
         }
     }
 }
