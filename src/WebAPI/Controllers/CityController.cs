@@ -23,21 +23,21 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<City>>> GetAll()
         {
-            return new ObjectResult(await _repository.GetAllCities());
+            return new ObjectResult(await _repository.GetAll());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<City>> Get(int id)
         {
-            return await _repository.GetCityById(id);
+            return await _repository.GetById(id);
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(City[] cities)
+        public async Task<ActionResult> Post([FromForm] City[] cities)
         {
             if (await _cityService.AddRange(cities))
             {
-                return Ok();
+                return StatusCode(201, cities);
             }
 
             return BadRequest(new { Error = "Coordinates are invalid" });
