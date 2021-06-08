@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromForm] City[] cities)
+        public async Task<ActionResult> Post(City[] cities)
         {
             if (await _cityService.AddRange(cities))
             {
