@@ -1,4 +1,4 @@
-import { fireEvent, screen, waitFor, render, act } from "@testing-library/react"
+import { fireEvent, screen, findByText, render, waitFor } from "@testing-library/react"
 import { City } from "../../models/City";
 import Main from "./Main";
 import { server } from '../../mocks/server/server';
@@ -7,8 +7,8 @@ beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
 
-describe('inputTable data is shown in outputTable', () => {
-    it('should succeed', async () => {
+describe('The input table data', () => {
+    it('should be shown in the output table', async () => {
 
         const cities: City[] = [
             { name: 'Kharkiv', x: 177, y: 178 },
