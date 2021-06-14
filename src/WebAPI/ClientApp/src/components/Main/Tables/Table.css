@@ -1,0 +1,43 @@
+.table-wrapper {
+    width: 30%;
+}
+
+.table-wrapper h2 {
+    text-align: center;
+    margin: 2%;
+}
+
+div.table {
+    width: 100%;
+    border: 2px solid black;
+}
+
+div.header {
+    text-align: center;
+    font-weight: bolder;
+}
+
+div.row {
+    border-top: 1px solid black;
+    width: 100%;
+}
+
+div.cell {
+    display: inline-block;
+    text-align: center;
+    width: calc((100% - 3px)/3);
+}
+
+div.row div.cell:nth-child(2) {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+div.cell input {
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    width: 100%;
+    padding: 0;
+}
