@@ -45,3 +45,34 @@ describe('The input table data', () => {
         screen.debug();
     })
 })
+
+describe('The error', () => {
+    it('should be shown on the page', async () => {
+        const cities: City[] = [
+            { name: 'Kharkiv', x: 177, y: 178 },
+            { name: 'Kiev', x: 177.14, y: 120 },
+            { name: 'Lviv', x: 210, y: 127 }
+        ];
+
+        const { getAllByRole, getByText, findByText } = render(<Main />);
+
+        const forms: HTMLFormElement[] = getAllByRole('form') as HTMLFormElement[]
+
+        for (let i = 0; i < cities.length; i++) {
+
+            const inputs: HTMLCollectionOf<HTMLInputElement> = forms[i].elements as HTMLCollectionOf<HTMLInputElement>
+
+            fireEvent.change(inputs[0], { target: { value: cities[i].name } })
+            fireEvent.change(inputs[1], { target: { value: cities[i].x } })
+            fireEvent.change(inputs[2], { target: { value: cities[i].y } })
+        }
+
+        const btn = getByText(/send/i);
+
+        fireEvent.click(btn)
+
+        expect(await findByText(/close/i)).toBeInTheDocument();
+
+        screen.debug();
+    })
+})
